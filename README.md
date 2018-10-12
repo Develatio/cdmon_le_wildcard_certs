@@ -35,8 +35,8 @@ certbot-auto certonly
     --server https://acme-staging-v02.api.letsencrypt.org/directory
     --manual
     --preferred-challenges dns
-    --manual-auth-hook "/path/to/hook-script.sh"
-    --manual-cleanup-hook "/path/to/hook-clean-script.sh"
+    --manual-auth-hook "./auth.py"
+    --manual-cleanup-hook "./clean.py"
     -d '*.yourdomain.tld'
     --dry-run
 ```
