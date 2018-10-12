@@ -19,24 +19,24 @@ pip3 install -r requirements.txt
 ```
 
 ```bash
-certbot-auto certonly
-    --server https://acme-v02.api.letsencrypt.org/directory
-    --manual
-    --preferred-challenges dns
-    --manual-auth-hook "./auth.py"
-    --manual-cleanup-hook "./clean.py"
+certbot-auto certonly \
+    --server https://acme-v02.api.letsencrypt.org/directory \
+    --manual \
+    --preferred-challenges dns \
+    --manual-auth-hook "./auth.py" \
+    --manual-cleanup-hook "./clean.py" \
     -d '*.yourdomain.tld'
 ```
 
 You can also use this, if you just want to test things out:
 
 ```bash
-certbot-auto certonly
-    --server https://acme-staging-v02.api.letsencrypt.org/directory
-    --manual
-    --preferred-challenges dns
-    --manual-auth-hook "./auth.py"
-    --manual-cleanup-hook "./clean.py"
-    -d '*.yourdomain.tld'
+certbot-auto certonly \
+    --server https://acme-staging-v02.api.letsencrypt.org/directory \
+    --manual \
+    --preferred-challenges dns \
+    --manual-auth-hook "./auth.py" \
+    --manual-cleanup-hook "./clean.py" \
+    -d '*.yourdomain.tld' \
     --dry-run
 ```
