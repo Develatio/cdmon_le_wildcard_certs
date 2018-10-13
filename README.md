@@ -9,8 +9,11 @@ programmatically.
 These scripts will help you get wildcard LE certs if you have a domain at
 cdmon.com
 
-Just clone and project, create the required `.env` file (make sure to read
-the [README.md of cdmon_automator](https://github.com/Develatio/cdmon_automator)) and then run the required commands:
+Just clone and project, provide the required environment variables
+(make sure to read the [README.md of cdmon_automator](https://github.com/Develatio/cdmon_automator))
+and then run the required commands:
+
+Tip: I have a `.env` file and I run `export $(cat .env | xargs)`.
 
 ```bash
 git clone git@github.com:Develatio/cdmon_le_wildcard_certs.git
@@ -25,7 +28,8 @@ certbot-auto certonly \
     --preferred-challenges dns \
     --manual-auth-hook "./auth.py" \
     --manual-cleanup-hook "./clean.py" \
-    -d '*.yourdomain.tld'
+    -d '*.yourdomain.tld' \
+    --manual-public-ip-logging-ok
 ```
 
 You can also use this, if you just want to test things out:
@@ -38,5 +42,6 @@ certbot-auto certonly \
     --manual-auth-hook "./auth.py" \
     --manual-cleanup-hook "./clean.py" \
     -d '*.yourdomain.tld' \
+    --manual-public-ip-logging-ok \
     --dry-run
 ```
