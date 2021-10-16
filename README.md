@@ -1,4 +1,4 @@
-# Scripts for getting Let's Encrypt wildcard certs and cdmon.com
+# Scripts for getting Let's Encrypt wildcard certs from cdmon.com
 
 Let's Encrypt has a tool called `certbot-auto`, which you can use to obtain
 wildcard certificates. There is only one problem: you need to use DNS challenge,
